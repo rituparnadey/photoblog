@@ -19,7 +19,7 @@
         {% assign image_files = site.static_files | where: "image", true %}
         {% for myimage in image_files %}
           <div class="col-md-4 photo-item">
-            <a class="gallery" href="{{ site.url }}{{ myimage.path }}"><img src="http://placehold.it/300x300"></a>
+            <a class="gallery" href="{{ site.baseurl }}{{ myimage.path }}"><img src="http://placehold.it/300x300"></a>
           </div>
         {% endfor %}
       </div>
