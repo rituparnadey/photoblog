@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include head.html %}
+  <style>
+    .photoblog-container {
+      padding-top: 100px;
+    }
+    .photo-item {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  {% include header.html %}
+  <div class="container photoblog-container">
+      <!-- Example row of columns -->
+      <div class="row">
+        {% assign image_files = site.static_files | where: "image", true %}
+        {% for myimage in image_files %}
+          <div class="col-md-4 photo-item">
+            <a class="gallery" href="{{ myimage.path }}"><img src="http://placehold.it/300x300"></a>
+          </div>
+        {% endfor %}
+      </div>
+      <hr>
+      <footer>
+        <p>© Rituparna Dey 2017</p>
+      </footer>
+    </div>
+  {% include footer.html %}
+  </div><!-- /.main -->
+</body>
+</html>
